@@ -18,7 +18,7 @@ if (typeof dato === "string") {
   console.log("Tipo non supportato");
 }
 
-// Snack 2
+// Snack 2 + 3
 type Dipendente = {
   nome: string,
   cognome: string,
@@ -27,4 +27,16 @@ type Dipendente = {
   anniDiServizio: number[],
   readonly emailAziendale: string,
   contratto: "indeterminato" | "determinato" | "freelance"
+}
+
+type Developer = Dipendente & {
+  livelloEsperienza: "Junior" | "Mid" | "Senior",
+  linguaggi?: string[],
+  certificazioni: string[]
+}
+
+type ProjectManager = Dipendente & {
+  teamSize: number | null,
+  budgetGestito?: number,
+  stakeholderPrincipali: string[]
 }
